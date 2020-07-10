@@ -24,6 +24,13 @@ args = parser.parse_args()
 seconds = args.seconds
 alerts = args.alerts
 
+if seconds < 0:
+    print("Oops. Unfortunately the programmer was not very intelligent and didn't",
+          "know how to write code for a timer that runs for negative seconds.",
+          "As such, this feature is not available :(",
+          sep='\n')
+    sys.exit(1)
+
 for i in range(seconds, 0, -1):
     if i == 1:
         print(f'{i} second  remaining')
